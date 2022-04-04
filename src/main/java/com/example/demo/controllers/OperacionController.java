@@ -17,24 +17,24 @@ public class OperacionController {
 		return "Hola mundo";
 	}
 
-	@GetMapping("/sumar")
+	@GetMapping("/sumar_eeuu")
 	public String sumar(@RequestParam float a, @RequestParam float b) {
 		String resultado = Float.toString(a + b);
 		return clienteRest.getForObject("https://resultados-eeuu-uda.herokuapp.com/resultado/" + resultado , String.class);
 	}
 
-	@GetMapping("/restar")
+	@GetMapping("/restar_eeuu")
 	public String restar(@RequestParam float a, @RequestParam float b) {
 		String resultado = Float.toString(a - b);
 		return clienteRest.getForObject("https://resultados-eeuu-uda.herokuapp.com/resultado/" + resultado , String.class);
 	}
 
-	@GetMapping("/sumareuropa")
+	@GetMapping("/sumar_europa")
 	public String sumarEuropa(@RequestParam float a, @RequestParam float b) {
 		String resultado = Float.toString(a + b);
 		return clienteRest.getForObject("https://resultados-europa-uda.herokuapp.com/resultado/" + resultado , String.class);
 	}
-	@GetMapping("/restareuropa")
+	@GetMapping("/restar_europa")
 	public String restarEuropa(@RequestParam float a, @RequestParam float b) {
 		String resultado = Float.toString(a - b);
 		return clienteRest.getForObject("https://resultados-europa-uda.herokuapp.com/resultado/" + resultado , String.class);
